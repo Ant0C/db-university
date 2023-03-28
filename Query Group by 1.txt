@@ -1,0 +1,9 @@
+----  Query 1  ----
+
+SELECT COUNT(*) AS "totale iscrizioni", YEAR(`enrolment_date`) AS "anno iscrizione"
+FROM `students` 
+GROUP BY YEAR(`enrolment_date`);
+
+----  Query 2  ----
+
+
