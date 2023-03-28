@@ -1,0 +1,23 @@
+----  Query 1  ----
+
+SELECT * 
+FROM `students`
+INNER JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`id`=53;
+
+----  Query 2  ----
+
+SELECT * 
+FROM `degrees`
+INNER JOIN `departments`
+ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`id`=7;
+
+----  Query 3  ----
+
+SELECT * 
+FROM `teachers`
+INNER JOIN `course_teacher`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
+WHERE `teacher_id` = 44;
