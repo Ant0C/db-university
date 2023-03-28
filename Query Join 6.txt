@@ -1,0 +1,56 @@
+----  Query 1  ----
+
+SELECT * 
+FROM `students`
+INNER JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`id`=53;
+
+----  Query 2  ----
+
+SELECT * 
+FROM `degrees`
+INNER JOIN `departments`
+ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`id`=7;
+
+----  Query 3  ----
+
+SELECT * 
+FROM `teachers`
+INNER JOIN `course_teacher`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
+WHERE `teacher_id` = 44;
+
+----  Query 4  ----
+
+SELECT * 
+FROM `students`
+INNER JOIN `degrees`
+ON `students`.`degree_id`=`degrees`.`id`
+INNER JOIN `departments`
+ON `degrees`.`department_id`=`departments`.`id`
+ORDER BY `surname`;
+
+----  Query 5  ----
+
+SELECT * 
+FROM `degrees`
+INNER JOIN `courses`
+ON `degrees`.`id`=`courses`.`degree_id`
+INNER JOIN `course_teacher`
+ON `courses`.`id`=`course_teacher`.`course_id`;
+
+----  Query 6  ----
+
+SELECT * 
+FROM `departments`
+INNER JOIN `degrees`
+ON `departments`.`id`=`degrees`.`department_id`
+INNER JOIN `courses`
+ON `degrees`.`id`=`courses`.`degree_id`
+INNER JOIN `course_teacher`
+ON `courses`.`id`=`course_teacher`.`course_id`
+INNER JOIN `teachers`
+ON `course_teacher`.`teacher_id`=`teachers`.`id`
+WHERE `departments`.`id`=5 ;
